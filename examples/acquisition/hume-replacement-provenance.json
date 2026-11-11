@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "live_python_sdk_recipe_capture",
+  "started_at": "2026-11-11T20:21:45.546Z",
+  "completed_at": "2026-11-11T20:21:55.629Z",
+  "endpoint": "https://speech-api.oruk.ai/v1/audio/analysis",
+  "parameters": {
+    "model": "oruk-resonance",
+    "diarize": true
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "oruk_sdk": "0.2.15",
+    "max_retries": 0
+  },
+  "execution": {
+    "exit_code": 0,
+    "signal": null,
+    "stdout_bytes": 2538,
+    "stderr_bytes": 0,
+    "retry_count": 0
+  },
+  "script": {
+    "url": "https://oruk.ai/examples/hume-to-oruk.py",
+    "bytes": 3601,
+    "sha256": "25e67097e05f3f2ac9e7aa00dcd2233f4f30d0c709a26aa02d09321164dc90b2"
+  },
+  "audio": {
+    "url": "https://oruk.ai/samples/conversations/02-grocery-prices.wav",
+    "bytes": 1387244,
+    "sha256": "72b99dab1f5670436f542ec41269d9e41a6bd5367b74a6d36427ca846a421a99",
+    "seconds": 14.45
+  },
+  "response": {
+    "url": "https://oruk.ai/examples/acquisition/hume-replacement.json",
+    "bytes": 8874,
+    "sha256": "d34a42eb9b118692e93752a0d167d042e9a385bfa2b82e42ec90afa34d765916",
+    "id": "speech_f6e7f3f725e34a129e7f4bdcc9adee0c",
+    "task": "analysis",
+    "model": "oruk-resonance"
+  },
+  "attribution": {
+    "creator": "The Agentic Data Company",
+    "dataset": "Open Yap 1K",
+    "source": "https://huggingface.co/datasets/TheAgenticDataCompany/open-yap-1k",
+    "audio_license": "CC BY 4.0",
+    "notice_url": "https://oruk.ai/examples/call-review-attribution.txt",
+    "changes": "Oruk excerpted and downmixed the source audio."
+  },
+  "scope": "One live SDK call on November 11, 2026 verifies this example request and returned shape. The response does not expose an immutable model revision. Values are model annotations, not ground truth or a comparative benchmark; future calls can differ. Returned usage/pricing fields are preserved verbatim and are not a subscription invoice. Current subscription allowances, rates and caps are documented at https://oruk.ai/pricing. The older grocery response remains unchanged at its original URL."
+}

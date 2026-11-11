@@ -1,0 +1,22 @@
+{
+  "name": "resonance-emotions",
+  "startedAt": "2026-11-11T20:13:57.839Z",
+  "endpoint": "https://speech-api.oruk.ai/v1/audio/emotions",
+  "fields": {
+    "model": "oruk-resonance"
+  },
+  "sampleUrl": "https://oruk.ai/samples/conversations/02-grocery-prices.wav",
+  "sampleSha256": "72b99dab1f5670436f542ec41269d9e41a6bd5367b74a6d36427ca846a421a99",
+  "sampleBytes": 1387244,
+  "retries": 0,
+  "completedAt": "2026-11-11T20:14:03.044Z",
+  "httpStatus": 200,
+  "responseFile": "/examples/acquisition/resonance-emotions.json",
+  "responseSha256": "2d4bedde28e8343fbebb45ae471024abf35975f9d0ac578ca70602d28e13e590",
+  "scope": "One successful public API request. Integration example, not a benchmark or accuracy evaluation.",
+  "requestImplementation": "Node.js fetch multipart HTTP, model and flags as recorded; not a Python execution.",
+  "accountBasis": "Existing legacy prepaid demonstration account. Recorded usage fields are not current subscription invoice totals.",
+  "audioAttribution": "https://oruk.ai/examples/call-review-attribution.txt",
+  "audioLicense": "CC BY 4.0; The Agentic Data Company (2026), Open Yap 1K; excerpted and downmixed by Oruk.",
+  "responseChanged": false
+}

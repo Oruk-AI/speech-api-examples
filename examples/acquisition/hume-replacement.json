@@ -1,0 +1,376 @@
+{
+  "id": "speech_f6e7f3f725e34a129e7f4bdcc9adee0c",
+  "object": "speech.result",
+  "task": "analysis",
+  "model": "oruk-resonance",
+  "text": "I'm sorry. The price of food has gone up so much. I mean... It really has. What what happened? I don't know. Like, honestly, I don't know what happened.",
+  "tagged_text": "I'm sorry. The price of food has gone up so much. I mean... <|casual|> <|disappointed|> It really has. <|passionate|> <|happy|> <|neutral|> What what happened? <|irritated|> <|angry|> <|frustrated|> <|disgusted|> <|impatient|> I don't know. Like, honestly, I don't know what happened. <|sarcastic|> <|passionate|> <|irritated|> <|skeptical|> <|disgusted|> <|frustrated|> <|angry|>",
+  "language": "en",
+  "duration": 14.45,
+  "emotions": [
+    {
+      "label": "angry",
+      "score": 0.9032942056655884
+    },
+    {
+      "label": "disappointed",
+      "score": 0.8679338097572327
+    },
+    {
+      "label": "frustrated",
+      "score": 0.8489722013473511
+    },
+    {
+      "label": "disgusted",
+      "score": 0.8469578623771667
+    },
+    {
+      "label": "happy",
+      "score": 0.7799928784370422
+    },
+    {
+      "label": "neutral",
+      "score": 0.7563575506210327
+    }
+  ],
+  "styles": [
+    {
+      "label": "sarcastic",
+      "score": 0.9489172697067261
+    },
+    {
+      "label": "passionate",
+      "score": 0.9230391979217529
+    },
+    {
+      "label": "irritated",
+      "score": 0.9099069833755493
+    },
+    {
+      "label": "skeptical",
+      "score": 0.8824278712272644
+    },
+    {
+      "label": "casual",
+      "score": 0.8688268065452576
+    },
+    {
+      "label": "impatient",
+      "score": 0.8255897164344788
+    }
+  ],
+  "segments": [
+    {
+      "id": 0,
+      "text": "I'm sorry. The price of food has gone up so much. I mean...",
+      "start": 0.185,
+      "end": 4.325,
+      "tagged_text": "I'm sorry. The price of food has gone up so much. I mean... <|casual|> <|disappointed|>",
+      "words": [
+        {
+          "word": "I'm",
+          "start": 0.275,
+          "end": 0.675,
+          "confidence": null
+        },
+        {
+          "word": "sorry.",
+          "start": 0.675,
+          "end": 0.915,
+          "confidence": null
+        },
+        {
+          "word": "The",
+          "start": 1.075,
+          "end": 1.2349999999999999,
+          "confidence": null
+        },
+        {
+          "word": "price",
+          "start": 1.2349999999999999,
+          "end": 1.4749999999999999,
+          "confidence": null
+        },
+        {
+          "word": "of",
+          "start": 1.4749999999999999,
+          "end": 1.635,
+          "confidence": null
+        },
+        {
+          "word": "food",
+          "start": 1.635,
+          "end": 2.035,
+          "confidence": null
+        },
+        {
+          "word": "has",
+          "start": 2.035,
+          "end": 2.2750000000000004,
+          "confidence": null
+        },
+        {
+          "word": "gone",
+          "start": 2.2750000000000004,
+          "end": 2.7550000000000003,
+          "confidence": null
+        },
+        {
+          "word": "up",
+          "start": 2.7550000000000003,
+          "end": 3.075,
+          "confidence": null
+        },
+        {
+          "word": "so",
+          "start": 3.075,
+          "end": 3.395,
+          "confidence": null
+        },
+        {
+          "word": "much.",
+          "start": 3.395,
+          "end": 3.7150000000000003,
+          "confidence": null
+        },
+        {
+          "word": "I",
+          "start": 3.875,
+          "end": 4.035,
+          "confidence": null
+        },
+        {
+          "word": "mean...",
+          "start": 4.035,
+          "end": 4.115,
+          "confidence": null
+        }
+      ],
+      "emotions": [
+        {
+          "label": "disappointed",
+          "score": 0.8679338097572327
+        }
+      ],
+      "styles": [
+        {
+          "label": "casual",
+          "score": 0.8688268065452576
+        }
+      ],
+      "speaker": "speaker_0"
+    },
+    {
+      "id": 1,
+      "text": "It really has.",
+      "start": 4.325,
+      "end": 6.065,
+      "tagged_text": "It really has. <|passionate|> <|happy|> <|neutral|>",
+      "words": [
+        {
+          "word": "It",
+          "start": 4.325,
+          "end": 4.565,
+          "confidence": null
+        },
+        {
+          "word": "really",
+          "start": 4.885,
+          "end": 5.205,
+          "confidence": null
+        },
+        {
+          "word": "has.",
+          "start": 5.205,
+          "end": 5.525,
+          "confidence": null
+        }
+      ],
+      "emotions": [
+        {
+          "label": "happy",
+          "score": 0.7799928784370422
+        },
+        {
+          "label": "neutral",
+          "score": 0.7563575506210327
+        }
+      ],
+      "styles": [
+        {
+          "label": "passionate",
+          "score": 0.9099069833755493
+        }
+      ],
+      "speaker": "speaker_1"
+    },
+    {
+      "id": 2,
+      "text": "What what happened?",
+      "start": 6.065,
+      "end": 7.805,
+      "tagged_text": "What what happened? <|irritated|> <|angry|> <|frustrated|> <|disgusted|> <|impatient|>",
+      "words": [
+        {
+          "word": "What",
+          "start": 6.2250000000000005,
+          "end": 6.305000000000001,
+          "confidence": null
+        },
+        {
+          "word": "what",
+          "start": 6.465000000000001,
+          "end": 6.785,
+          "confidence": null
+        },
+        {
+          "word": "happened?",
+          "start": 6.785,
+          "end": 7.505000000000001,
+          "confidence": null
+        }
+      ],
+      "emotions": [
+        {
+          "label": "angry",
+          "score": 0.9032942056655884
+        },
+        {
+          "label": "frustrated",
+          "score": 0.8489722013473511
+        },
+        {
+          "label": "disgusted",
+          "score": 0.8469578623771667
+        }
+      ],
+      "styles": [
+        {
+          "label": "irritated",
+          "score": 0.9046505093574524
+        },
+        {
+          "label": "impatient",
+          "score": 0.8255897164344788
+        }
+      ],
+      "speaker": "speaker_0"
+    },
+    {
+      "id": 3,
+      "text": "I don't know. Like, honestly, I don't know what happened.",
+      "start": 8.805,
+      "end": 14.125,
+      "tagged_text": "I don't know. Like, honestly, I don't know what happened. <|sarcastic|> <|passionate|> <|irritated|> <|skeptical|> <|disgusted|> <|frustrated|> <|angry|>",
+      "words": [
+        {
+          "word": "I",
+          "start": 8.895,
+          "end": 9.215,
+          "confidence": null
+        },
+        {
+          "word": "don't",
+          "start": 9.215,
+          "end": 9.934999999999999,
+          "confidence": null
+        },
+        {
+          "word": "know.",
+          "start": 9.934999999999999,
+          "end": 10.254999999999999,
+          "confidence": null
+        },
+        {
+          "word": "Like,",
+          "start": 11.215,
+          "end": 11.375,
+          "confidence": null
+        },
+        {
+          "word": "honestly,",
+          "start": 11.535,
+          "end": 12.014999999999999,
+          "confidence": null
+        },
+        {
+          "word": "I",
+          "start": 12.174999999999999,
+          "end": 12.415,
+          "confidence": null
+        },
+        {
+          "word": "don't",
+          "start": 12.415,
+          "end": 12.895,
+          "confidence": null
+        },
+        {
+          "word": "know",
+          "start": 12.895,
+          "end": 13.215,
+          "confidence": null
+        },
+        {
+          "word": "what",
+          "start": 13.215,
+          "end": 13.535,
+          "confidence": null
+        },
+        {
+          "word": "happened.",
+          "start": 13.535,
+          "end": 14.015,
+          "confidence": null
+        }
+      ],
+      "emotions": [
+        {
+          "label": "disgusted",
+          "score": 0.8449215292930603
+        },
+        {
+          "label": "frustrated",
+          "score": 0.8267117738723755
+        },
+        {
+          "label": "angry",
+          "score": 0.815232515335083
+        }
+      ],
+      "styles": [
+        {
+          "label": "sarcastic",
+          "score": 0.9489172697067261
+        },
+        {
+          "label": "passionate",
+          "score": 0.9230391979217529
+        },
+        {
+          "label": "irritated",
+          "score": 0.9099069833755493
+        },
+        {
+          "label": "skeptical",
+          "score": 0.8824278712272644
+        }
+      ],
+      "speaker": "speaker_1"
+    }
+  ],
+  "usage": {
+    "audio_seconds": 14.45,
+    "billable_seconds": 14.45,
+    "rate_per_minute_usd": "0.0160",
+    "estimated_cost_usd": "0.003853",
+    "pricing_version": "2026-07-11",
+    "billing_unit": "audio_second",
+    "rate_per_request_usd": null
+  },
+  "diarized": true,
+  "speakers": [
+    "speaker_0",
+    "speaker_1"
+  ]
+}

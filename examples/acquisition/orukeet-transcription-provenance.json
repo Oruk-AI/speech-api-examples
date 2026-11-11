@@ -1,0 +1,22 @@
+{
+  "name": "orukeet-transcription",
+  "startedAt": "2026-11-11T20:13:43.017Z",
+  "endpoint": "https://speech-api.oruk.ai/v1/audio/transcriptions",
+  "fields": {
+    "model": "oruk-orukeet"
+  },
+  "sampleUrl": "https://oruk.ai/samples/conversations/02-grocery-prices.wav",
+  "sampleSha256": "72b99dab1f5670436f542ec41269d9e41a6bd5367b74a6d36427ca846a421a99",
+  "sampleBytes": 1387244,
+  "retries": 0,
+  "completedAt": "2026-11-11T20:13:45.094Z",
+  "httpStatus": 200,
+  "responseFile": "/examples/acquisition/orukeet-transcription.json",
+  "responseSha256": "ccfd523e944a7738fa286a5e7e36ea610c214e811ffee241cb2e0d40cb2bc81a",
+  "scope": "One successful public API request. Integration example, not a benchmark or accuracy evaluation.",
+  "requestImplementation": "Node.js fetch multipart HTTP, model and flags as recorded; not a Python execution.",
+  "accountBasis": "Existing legacy prepaid demonstration account. Recorded usage fields are not current subscription invoice totals.",
+  "audioAttribution": "https://oruk.ai/examples/call-review-attribution.txt",
+  "audioLicense": "CC BY 4.0; The Agentic Data Company (2026), Open Yap 1K; excerpted and downmixed by Oruk.",
+  "responseChanged": false
+}

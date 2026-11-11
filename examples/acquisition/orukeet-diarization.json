@@ -1,0 +1,81 @@
+{
+  "id": "tr_d17458369c9f4863b240b67dd91ca187",
+  "object": "audio.transcription",
+  "model": "oruk-orukeet",
+  "task": "transcription",
+  "text": "I'm sorry. The price of food has gone up so much. I mean It really has. What happened? I don't know. Like, honestly, I don't know what happened.",
+  "language": "en",
+  "duration": 14.45,
+  "audio_seconds": 14.45,
+  "emotions": [],
+  "styles": [],
+  "segments": [
+    {
+      "start": 0.185,
+      "end": 4.305,
+      "speaker": "speaker_0",
+      "text": "I'm sorry. The price of food has gone up so much. I mean",
+      "emotions": [],
+      "styles": [],
+      "id": 0
+    },
+    {
+      "start": 4.305,
+      "end": 6.005,
+      "speaker": "speaker_1",
+      "text": "It really has.",
+      "emotions": [],
+      "styles": [],
+      "id": 1
+    },
+    {
+      "start": 6.005,
+      "end": 7.805,
+      "speaker": "speaker_0",
+      "text": "What happened?",
+      "emotions": [],
+      "styles": [],
+      "id": 2
+    },
+    {
+      "start": 8.805,
+      "end": 10.585,
+      "speaker": "speaker_1",
+      "text": "I don't know.",
+      "emotions": [],
+      "styles": [],
+      "id": 3
+    },
+    {
+      "start": 11.245,
+      "end": 14.125,
+      "speaker": "speaker_1",
+      "text": "Like, honestly, I don't know what happened.",
+      "emotions": [],
+      "styles": [],
+      "id": 4
+    }
+  ],
+  "diarized": true,
+  "speakers": [
+    "speaker_0",
+    "speaker_1"
+  ],
+  "usage": {
+    "audio_seconds": 14.45,
+    "billable_seconds": 14.45,
+    "billing_unit": "audio_second",
+    "billing_basis": "prepaid",
+    "rate_per_minute_usd": "0.00445",
+    "estimated_cost_usd": "0.001072",
+    "cost_microusd": 1072,
+    "pricing_version": "2026-09-13-orukeet",
+    "tasks": [
+      "transcription",
+      "diarize"
+    ]
+  },
+  "request_id": "req_a90fcc06ef9848308e6624e44844b244",
+  "asr_ms": 37.05629000069166,
+  "server_ms": 10907.113646000653
+}

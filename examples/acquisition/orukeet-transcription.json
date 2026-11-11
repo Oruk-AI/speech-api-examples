@@ -1,0 +1,31 @@
+{
+  "id": "tr_50552a9a634845429678d029db410ebf",
+  "object": "audio.transcription",
+  "model": "oruk-orukeet",
+  "task": "transcription",
+  "text": "I'm sorry. The price of food has gone up so much. I mean It really has. What happened? I don't know. Like, honestly, I don't know what happened.",
+  "language": "en",
+  "duration": 14.45,
+  "audio_seconds": 14.45,
+  "emotions": [],
+  "styles": [],
+  "segments": [],
+  "diarized": false,
+  "speakers": [],
+  "usage": {
+    "audio_seconds": 14.45,
+    "billable_seconds": 14.45,
+    "billing_unit": "audio_second",
+    "billing_basis": "prepaid",
+    "rate_per_minute_usd": "0.00045",
+    "estimated_cost_usd": "0.000109",
+    "cost_microusd": 109,
+    "pricing_version": "2026-09-13-orukeet",
+    "tasks": [
+      "transcription"
+    ]
+  },
+  "request_id": "req_42924d1829fa416dba9ea2a9ee06ea62",
+  "asr_ms": 47.95916299917735,
+  "server_ms": 48.03640399950382
+}

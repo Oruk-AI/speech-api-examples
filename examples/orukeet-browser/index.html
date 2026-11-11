@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Orukeet browser dictation</title>
+<style>body{font:16px/1.6 system-ui;background:#f7f7ed;color:#171717;max-width:760px;margin:40px auto;padding:0 20px}button{font:inherit;padding:12px 18px;margin:8px 8px 8px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;padding:20px}a{color:inherit}audio{max-width:100%}</style>
+<h1>Orukeet browser dictation</h1>
+<p>Record up to 55 seconds of English speech. Stop to upload and receive a final transcript. Your API key stays on this local server. This demo makes no automatic retries.</p>
+<p><a href="https://oruk.ai/guides/orukeet-browser-dictation">Canonical guide and costs</a> · <a href="https://oruk.ai/examples/call-review-attribution.txt">Sample attribution (CC BY 4.0)</a></p>
+<audio controls src="/sample.wav" aria-label="Grocery conversation sample"></audio>
+<div><button id="sample">Transcribe sample</button><button id="record">Record microphone</button><button id="stop" disabled>Stop and transcribe</button></div>
+<p id="status" role="status">Ready. Each successful request uses your Orukeet allowance.</p><pre id="result" aria-label="Complete JSON output">The response will appear here.</pre>
+<script>
+const el = id => document.getElementById(id);
+let recorder, stream, timer, busy = false, oversized = false, pageActive = true;
+const setBusy = value => { busy = value; el('sample').disabled = value; el('record').disabled = value; };
+const cleanup = () => { clearTimeout(timer); stream?.getTracks().forEach(track => track.stop()); stream = null; el('stop').disabled = true; };
+async function transcribe(blob) {
+  setBusy(true); el('status').textContent = 'Transcribing…'; el('result').textContent = '';
+  try {
+    const response = await fetch('/transcribe', { method: 'POST', headers: { 'Content-Type': blob.type, 'X-Oruk-Demo': '1' }, body: blob, signal: AbortSignal.timeout(125000) });
+    const result = await response.json(); el('result').textContent = JSON.stringify(result, null, 2);
+    el('status').textContent = response.ok ? 'Complete. IDs, timing and model output can vary.' : 'Request failed. Check account access, budget or audio; no retry was made.';
+  } catch { el('status').textContent = 'Connection failed; outcome may be unknown. No automatic retry was made.'; }
+  finally { cleanup(); setBusy(false); }
+}
+el('sample').onclick = async () => {
+  if (busy) return; setBusy(true);
+  try { const res = await fetch('/sample.wav'); if (!res.ok) throw Error(); await transcribe(await res.blob()); }
+  catch { el('status').textContent = 'Sample could not be loaded.'; setBusy(false); }
+};
+el('record').onclick = async () => {
+  if (busy) return; setBusy(true);
+  try {
+    if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) throw Error('This browser cannot record audio. Try the sample button.');
+    const mime = ['audio/webm;codecs=opus', 'audio/ogg;codecs=opus', 'audio/mp4'].find(type => MediaRecorder.isTypeSupported(type));
+    if (!mime) throw Error('No supported recorder format. Try the sample button.');
+    stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    if (!pageActive) { cleanup(); setBusy(false); return; }
+    recorder = new MediaRecorder(stream, { mimeType: mime });
+    const recording = recorder;
+    const chunks = []; let size = 0, recordingFailed = false; oversized = false;
+    recorder.ondataavailable = event => { if (recorder !== recording) return; size += event.data.size; chunks.push(event.data); if (size > 3 * 1024 * 1024) { oversized = true; if (recorder.state === 'recording') recorder.stop(); } };
+    recorder.onstop = () => { if (recorder !== recording || !pageActive) return; cleanup(); if (oversized) { el('status').textContent = recordingFailed ? 'Microphone recording failed. Nothing was uploaded.' : 'Recording too large; it was not uploaded.'; setBusy(false); } else void transcribe(new Blob(chunks, { type: mime })); };
+    recorder.onerror = () => { if (recorder !== recording) return; recordingFailed = true; oversized = true; cleanup(); el('status').textContent = 'Microphone recording failed. Nothing was uploaded.'; setBusy(false); };
+    recorder.start(250); el('stop').disabled = false;
+    el('status').textContent = 'Recording… Stop when finished (automatic stop at 55 seconds).';
+    timer = setTimeout(() => { if (recorder.state === 'recording') recorder.stop(); }, 55000);
+  } catch (error) { cleanup(); setBusy(false); el('status').textContent = error.message || 'Microphone permission denied.'; }
+};
+el('stop').onclick = () => { if (recorder?.state === 'recording') { el('stop').disabled = true; recorder.stop(); } };
+window.addEventListener('pagehide', () => { pageActive = false; recorder = null; cleanup(); });
+window.addEventListener('pageshow', () => { pageActive = true; setBusy(false); });
+</script></html>

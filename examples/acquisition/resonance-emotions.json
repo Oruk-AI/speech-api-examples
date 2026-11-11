@@ -1,0 +1,62 @@
+{
+  "id": "speech_b7853db68f464d05b7669a65802488b2",
+  "object": "speech.result",
+  "task": "emotion",
+  "model": "oruk-resonance",
+  "text": null,
+  "tagged_text": null,
+  "language": null,
+  "duration": 14.45,
+  "emotions": [
+    {
+      "label": "frustrated",
+      "score": 0.9845753908157349
+    },
+    {
+      "label": "angry",
+      "score": 0.873214840888977
+    },
+    {
+      "label": "disappointed",
+      "score": 0.8679338097572327
+    }
+  ],
+  "styles": [],
+  "segments": [
+    {
+      "id": 0,
+      "text": null,
+      "start": 0,
+      "end": 14.45,
+      "tagged_text": null,
+      "words": [],
+      "emotions": [
+        {
+          "label": "frustrated",
+          "score": 0.9845753908157349
+        },
+        {
+          "label": "angry",
+          "score": 0.873214840888977
+        },
+        {
+          "label": "disappointed",
+          "score": 0.8679338097572327
+        }
+      ],
+      "styles": [],
+      "speaker": null
+    }
+  ],
+  "usage": {
+    "audio_seconds": 14.45,
+    "billable_seconds": 14.45,
+    "rate_per_minute_usd": "0.0080",
+    "estimated_cost_usd": "0.001927",
+    "pricing_version": "2026-07-11",
+    "billing_unit": "audio_second",
+    "rate_per_request_usd": null
+  },
+  "diarized": false,
+  "speakers": []
+}
