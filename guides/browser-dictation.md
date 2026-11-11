@@ -8,6 +8,17 @@ Install Node.js 22+, set `ORUK_API_KEY` in your server environment, then run fro
 node examples/orukeet-browser/server.mjs
 ```
 
+To download just the browser example instead of cloning this repository:
+
+```sh
+mkdir orukeet-browser && cd orukeet-browser
+curl --fail --location -O https://oruk.ai/examples/orukeet-browser/server.mjs
+curl --fail --location -o index.html https://oruk.ai/examples/orukeet-browser/index.html.txt
+node server.mjs
+```
+
+The HTML source is served as a text download and saved locally as `index.html`.
+
 Open **http://127.0.0.1:8787** exactly. No npm install is required. The server downloads the licensed grocery sample and verifies its size/SHA-256 before listening. See [sample attribution](../examples/call-review-attribution.txt). The key stays on the server; the browser posts audio only to the local backend.
 
 Choose **Transcribe sample**, or allow microphone access, record English speech and choose **Stop and transcribe**. The recorder stops at 55 seconds and rejects recordings over 3 MiB. This is a record-then-upload transcription demo, not incremental streaming. Supported recorder formats depend on the browser; use the sample button if recording is unavailable.
