@@ -12,5 +12,5 @@
       "bytes": 31991
     }
   },
-  "verification": "Download the public resource with curl --fail --location --compressed https://oruk.ai/llms.txt --output llms.txt and run shasum -a 256 llms.txt. Match the digest and byte length to one edition. The detector edge replaces only the OrukZero section of the website source. These digests identify the prepared editions; they do not assert that either has already been deployed."
+  "verification": "Download the public resource with curl --fail --location --compressed https://oruk.ai/llms.txt --output llms.txt and run shasum -a 256 llms.txt and wc -c < llms.txt. Match the digest and byte length to one edition. The detector edge replaces only the OrukZero section of the website source. These digests identify the prepared editions; they do not assert that either has already been deployed."
 }
