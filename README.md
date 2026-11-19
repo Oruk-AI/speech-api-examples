@@ -10,6 +10,18 @@ Small, runnable integrations for Oruk's hosted speech API. Python 3.10+ for file
 | Speech emotion recognition | [Emotion recipe](guides/emotion-recognition.md) | [Speech emotion recognition API](https://oruk.ai/speech-emotion-recognition-api#integrate) |
 | Hume file-analysis migration | [Migration recipe](guides/hume-migration.md) | [Hume migration guide](https://oruk.ai/compare/hume-expression-measurement-alternative) |
 
+## Use the speech API with a coding agent
+
+Connect Claude Code to the hosted Oruk MCP server:
+
+```sh
+claude mcp add --transport http oruk https://oruk.ai/mcp
+```
+
+Call `oruk_list_models` to read the catalog without an API key. For a short audio test, `oruk_create_trial_key` can issue a temporary key for three requests in 30 minutes, subject to the shared trial budget. Keep permanent API keys in server-side configuration. [Client setup and tool permissions](https://oruk.ai/docs/mcp).
+
+The recipes in this repository use hosted HTTP endpoints. For the separate downloadable recognizer, use the [local Orukeet guide](https://oruk.ai/guides/orukeet-local-transcription) or [Orukeet's Context7 documentation](https://context7.com/oruk-ai/orukeet).
+
 ## Install and get the sample
 
 Run commands from this repository's root:
