@@ -1,0 +1,16 @@
+{
+  "resource": "https://oruk.ai/llms.txt",
+  "publication_date": "2026-11-19",
+  "hash_input": "Complete decompressed UTF-8 response body, including its final newline.",
+  "editions": {
+    "website_source": {
+      "sha256": "394b249d5802e3100e448ac5020f686dc2086ba225429e7c553f5b89571bd2ef",
+      "bytes": 31610
+    },
+    "website_with_detector_edge": {
+      "sha256": "df50efdb0eff252b0c0b637df282c3dce6586fb10e471f47df4721b7a5de86ec",
+      "bytes": 31991
+    }
+  },
+  "verification": "Download the public resource with curl --fail --location --compressed https://oruk.ai/llms.txt --output llms.txt and run shasum -a 256 llms.txt. Match the digest and byte length to one edition. The detector edge replaces only the OrukZero section of the website source. These digests identify the prepared editions; they do not assert that either has already been deployed."
+}
