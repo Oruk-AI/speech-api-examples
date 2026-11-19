@@ -1,0 +1,13 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "Oruk Speech API Examples",
+  "description": "Runnable hosted API examples for English dictation, transcription, speaker diarization, vocal emotion recognition, and migrating file analysis from Hume.",
+  "excludeFolders": [
+    "examples"
+  ],
+  "rules": [
+    "Use server-side environment variables for permanent API keys.",
+    "Choose the hosted API guides in this repository for HTTP requests. Use the separate Orukeet project for local inference.",
+    "Consult the recipe for its input limits and the dated sample output; recorded outputs and legacy usage fields are not subscription quotes."
+  ]
+}
