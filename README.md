@@ -20,7 +20,9 @@ claude mcp add --transport http oruk https://oruk.ai/mcp
 
 Call `oruk_list_models` to read the catalog without an API key. For a short audio test, `oruk_create_trial_key` can issue a temporary key for three requests in 30 minutes, subject to the shared trial budget. Keep permanent API keys in server-side configuration. [Client setup and tool permissions](https://oruk.ai/docs/mcp).
 
-The recipes in this repository use hosted HTTP endpoints. For the separate downloadable recognizer, use the [local Orukeet guide](https://oruk.ai/guides/orukeet-local-transcription) or [Orukeet's Context7 documentation](https://context7.com/oruk-ai/orukeet).
+For hosted API recipes, give your coding agent the Context7 library ID `/oruk-ai/speech-api-examples`. [Browse the indexed examples on Context7](https://context7.com/oruk-ai/speech-api-examples).
+
+For local transcription with the downloadable Orukeet model, use the separate Context7 library ID `/oruk-ai/orukeet`. [Local setup guide](https://oruk.ai/guides/orukeet-local-transcription) · [Orukeet on Context7](https://context7.com/oruk-ai/orukeet).
 
 ## Install and get the sample
 
