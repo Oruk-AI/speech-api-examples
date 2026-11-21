@@ -10,6 +10,8 @@ Small, runnable integrations for Oruk's hosted speech API. Python 3.10+ for file
 | Speech emotion recognition | [Emotion recipe](guides/emotion-recognition.md) | [Speech emotion recognition API](https://oruk.ai/speech-emotion-recognition-api#integrate) |
 | Hume file-analysis migration | [Migration recipe](guides/hume-migration.md) | [Hume migration guide](https://oruk.ai/compare/hume-expression-measurement-alternative) |
 
+For hosted transcription, start with the [Orukeet hosted model](https://oruk.ai/models/orukeet) and [API quickstart](https://oruk.ai/docs/quickstart). For vocal delivery, read [what paralinguistics measures](https://oruk.ai/what-is-paralinguistics), listen to the [voice emotion analyzer](https://oruk.ai/tools/voice-emotion-analyzer), or integrate the [speech emotion recognition API](https://oruk.ai/speech-emotion-recognition-api).
+
 ## Use the speech API with a coding agent
 
 Connect Claude Code to the hosted Oruk MCP server:
