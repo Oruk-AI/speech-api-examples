@@ -4,13 +4,14 @@ Small, runnable integrations for Oruk's hosted speech API. Python 3.10+ for file
 
 | Integration | Run instructions | Canonical guide |
 | --- | --- | --- |
-| Python transcription | [Python recipe](guides/transcription.md) | [Orukeet Python transcription](https://oruk.ai/guides/orukeet-python-transcription) |
+| Fourier 2B English transcription (`oruk-fourier-2b`) | [Fourier 2B recipe](guides/fourier-2b-transcription.md) | [Models & pricing](https://oruk.ai/models#model-comparison) · [Benchmarks](https://oruk.ai/benchmarks) |
+| Python transcription (Orukeet) | [Python recipe](guides/transcription.md) | [Orukeet Python transcription](https://oruk.ai/guides/orukeet-python-transcription) |
 | Transcription with diarization | [Speaker recipe](guides/diarization.md) | [Orukeet speaker diarization](https://oruk.ai/guides/orukeet-transcription-diarization) |
 | Browser dictation | [Browser recipe](guides/browser-dictation.md) | [Orukeet browser dictation](https://oruk.ai/guides/orukeet-browser-dictation) |
 | Speech emotion recognition | [Emotion recipe](guides/emotion-recognition.md) | [Speech emotion recognition API](https://oruk.ai/speech-emotion-recognition-api#integrate) |
 | Hume file-analysis migration | [Migration recipe](guides/hume-migration.md) | [Hume migration guide](https://oruk.ai/compare/hume-expression-measurement-alternative) |
 
-For hosted transcription, start with the [Orukeet hosted model](https://oruk.ai/models/orukeet) and [API quickstart](https://oruk.ai/docs/quickstart). For vocal delivery, read [what paralinguistics measures](https://oruk.ai/what-is-paralinguistics), listen to the [voice emotion analyzer](https://oruk.ai/tools/voice-emotion-analyzer), or integrate the [speech emotion recognition API](https://oruk.ai/speech-emotion-recognition-api).
+For highest-accuracy English batch transcription, use **`oruk-fourier-2b`** ([Fourier 2B recipe](guides/fourier-2b-transcription.md); `$0.0080/min`, up to 30 MiB / 60 min; live **#7/68** overall and **#1 single-model open-weights** on the [HF Open ASR Leaderboard v1.16.3](https://github.com/huggingface/open_asr_leaderboard/pull/298), **4.95%** 7-split public English mean WER vs. **5.75%** base `Qwen/Qwen3-ASR-1.7B-hf`, **10.92%** Open ASR Long-Form, **#1/16** GigaSpeechBench English Accents & Vertical-Domain, **6.33% #2/35** AudioBench, **8.57% #4/43** Omi Medical). For low-cost short-clip transcription or diarization, start with the [Orukeet hosted model](https://oruk.ai/models/orukeet) and [API quickstart](https://oruk.ai/docs/quickstart). For vocal delivery, read [what paralinguistics measures](https://oruk.ai/what-is-paralinguistics), listen to the [voice emotion analyzer](https://oruk.ai/tools/voice-emotion-analyzer), or integrate the [speech emotion recognition API](https://oruk.ai/speech-emotion-recognition-api).
 
 ## Use the speech API with a coding agent
 
@@ -49,7 +50,7 @@ The 14.45-second recording is from **Open Yap 1K, The Agentic Data Company (2026
 
 Set `ORUK_API_KEY` in your environment using your normal secret-management method. Keep the key on your local machine or backend, never in a browser script, committed file, command-line argument or shared output. This package reads the environment directly; it does not load `.env` files. Create a key at [API keys](https://oruk.ai/account/api-keys).
 
-Live calls require eligible API access and an active trial, subscription allowance or existing credit entitlement. A subscription is required for new ongoing API usage. Orukeet base transcription is $0.027 per audio hour, with its own subscription allowance; diarization adds $0.004 per minute from that allowance. Resonance 1 uses the separate speech-understanding allowance. Check [current prices, caps and trial terms](https://oruk.ai/pricing) before submitting audio. These are metered requests, including sample submissions.
+Live calls require eligible API access and an active trial, subscription allowance or existing credit entitlement. A subscription is required for new ongoing API usage. Fourier 2B (`oruk-fourier-2b`) is $0.0080 per audio minute ($0.48/hour, billed per audio second, 1 s minimum) from the shared speech-understanding allowance. Orukeet base transcription is $0.027 per audio hour, with its own subscription allowance; diarization adds $0.004 per minute from that allowance. Resonance 1 also uses the speech-understanding allowance. Check [current prices, caps and trial terms](https://oruk.ai/pricing) before submitting audio. These are metered requests, including sample submissions.
 
 You can inspect the Hume migration response without an API key, SDK install or network request:
 
@@ -65,7 +66,7 @@ The captures used an existing legacy prepaid demonstration account. Returned `us
 
 ## Errors and production integration
 
-All examples disable automatic inference retries. File recipes reject missing/oversized inputs. Orukeet requires short English audio: at most 60 seconds and 4 MiB for the whole multipart request; the Python example reserves 64 KiB of that limit for request overhead. Resonance 1 accepts supported English recordings up to 30 MB and 60 minutes. The browser demo caps recordings at 55 seconds and 3 MiB.
+All examples disable automatic inference retries. File recipes reject missing/oversized inputs. Fourier 2B (`oruk-fourier-2b`) accepts English audio (`en`, `en-US`, `en-GB`) up to 30 MiB and 60 minutes (3,600 s) per request via server-side chunking; the Python example reserves 64 KiB of the 30 MiB cap for multipart overhead. Orukeet requires short English audio: at most 60 seconds and 4 MiB for the whole multipart request; the Python example reserves 64 KiB of that limit for request overhead. Resonance 1 accepts supported English recordings up to 30 MB and 60 minutes. The browser demo caps recordings at 55 seconds and 3 MiB.
 
 For 401/403, fix authentication or access; for usage/budget failures, check your account; for 413/415, correct the input. On 429/5xx, follow the [production retry guide](https://oruk.ai/docs/production). After a timeout or disconnect, the server may have processed the request: preserve the request ID where present and check Usage before deciding whether to send again. Trace IDs are not a general idempotency guarantee.
 

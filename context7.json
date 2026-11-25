@@ -1,7 +1,7 @@
 {
   "$schema": "https://context7.com/schema/context7.json",
   "projectTitle": "Oruk Speech API Examples",
-  "description": "Runnable hosted API examples for English dictation, transcription, speaker diarization, vocal emotion recognition, and migrating file analysis from Hume.",
+  "description": "Runnable hosted API examples for Fourier 2B English transcription, Orukeet dictation and speaker diarization, vocal emotion recognition, and migrating file analysis from Hume.",
   "excludeFolders": [
     "examples"
   ],
